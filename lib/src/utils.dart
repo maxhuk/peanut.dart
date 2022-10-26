@@ -60,7 +60,7 @@ bool isFlutterSdkHeuristic(List<String> path) {
   }
 
   // Assume that the Flutter SDK is installed in a directory named 'flutter'
-  final flutterIndex = path.lastIndexOf('flutter');
+  final flutterIndex = path.map((s) => s.toLowerCase()).lastIndexOf('flutter');
 
   if (flutterIndex > path.length - depth) {
     return true;
